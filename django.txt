@@ -1,0 +1,13 @@
+from django.shortcuts import render,redirect
+from django.contrib.auth.forms import UserCreationForm
+
+def register_views(request):
+    if request.method=='POST':
+	form=UserCreationForm(request.POST)
+
+def register_views(request):
+    if request.method=="POST":
+	form=UserCreationForm(request.POST)
+	if form.is valid():
+	form.save()
+	return redirect("posts:lists")
