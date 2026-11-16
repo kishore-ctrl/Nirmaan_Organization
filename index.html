@@ -1,0 +1,1961 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Barani Furniture — Handcrafted Teak &amp; Luxury Living</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ivory: '#FAF7F2',
+            sand: '#F2EBE1',
+            linen: '#E8DDD0',
+            espresso: '#231B15',
+            walnut: '#5C4B3E',
+            teak: '#8C5A32',
+            teakDark: '#6E4423',
+            brass: '#B8864B',
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    body {
+      background-color: #FAF7F2;
+      color: #231B15;
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+    .wood-grain-bg {
+      background-image: radial-gradient(circle at 20% 20%, rgba(184, 134, 75, 0.08), transparent 55%),
+                        radial-gradient(circle at 80% 80%, rgba(140, 90, 50, 0.08), transparent 50%);
+    }
+    .card-hover {
+      transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 36px -12px rgba(35, 27, 21, 0.14);
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-teak selection:text-ivory">
+
+  <!-- Announcement Strip -->
+  <div class="bg-espresso text-ivory text-xs sm:text-sm py-2 px-4 text-center tracking-wide">
+    <span class="text-brass font-medium">Barani Furniture</span> &mdash; 60+ Handcrafted Teak, Sofa, Wardrobe &amp; Office Designs &bull; Up to 50% Off
+  </div>
+
+  <!-- Sticky Navigation -->
+  <header class="sticky top-0 z-40 bg-ivory/95 backdrop-blur-md border-b border-linen">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-4">
+      <a href="#top" class="flex items-center gap-2.5 shrink-0">
+        <div class="w-9 h-9 rounded-lg bg-teak text-ivory flex items-center justify-center font-serif font-bold text-lg shadow-sm">B</div>
+        <div>
+          <span class="font-serif text-lg sm:text-xl font-semibold tracking-tight text-espresso block leading-none">Barani Furniture</span>
+          <span class="text-[10px] uppercase tracking-[0.2em] text-walnut hidden sm:block mt-0.5">Teak &amp; Fine Living</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-walnut">
+        <a href="#collections" class="hover:text-teak transition-colors">Collections</a>
+        <a href="#catalog" class="hover:text-teak transition-colors">Catalog</a>
+        <a href="#craftsmanship" class="hover:text-teak transition-colors">Craftsmanship</a>
+        <a href="#faq" class="hover:text-teak transition-colors">FAQ</a>
+        <a href="#contact" class="hover:text-teak transition-colors">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-2 sm:gap-3">
+        <button id="toggleSearchBtn" type="button" aria-label="Search catalog" class="p-2 rounded-full hover:bg-sand text-espresso transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35m1.6-5.4a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        </button>
+
+        <button id="wishlistFilterBtn" type="button" aria-label="View saved items" class="relative p-2 rounded-full hover:bg-sand text-espresso transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          <span id="wishlistBadge" class="hidden absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] px-1 rounded-full bg-brass text-ivory text-[10px] font-semibold flex items-center justify-center">0</span>
+        </button>
+
+        <button id="openCartBtn" type="button" class="flex items-center gap-2 bg-espresso hover:bg-teak text-ivory px-3.5 py-2 rounded-full text-sm font-medium transition-colors shadow-sm">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+          <span class="hidden sm:inline">Cart</span>
+          <span id="cartCountBadge" class="bg-brass text-espresso text-xs font-bold px-1.5 py-0.5 rounded-full min-w-[20px] text-center">0</span>
+        </button>
+
+        <button id="mobileMenuBtn" type="button" aria-label="Open navigation menu" class="md:hidden p-2 rounded-lg hover:bg-sand text-espresso">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Collapsible Search Bar -->
+    <div id="searchBarPanel" class="hidden border-t border-linen bg-sand/70 px-4 py-3">
+      <div class="max-w-3xl mx-auto flex items-center gap-2">
+        <input id="searchInput" type="search" placeholder="Search teak sofas, dining tables, wardrobes, TV units, chairs..." class="w-full bg-ivory border border-linen rounded-full px-4 py-2 text-sm text-espresso placeholder:text-walnut/60 focus:outline-none focus:ring-2 focus:ring-teak/40" />
+        <button id="clearSearchBtn" type="button" class="text-xs font-medium text-walnut hover:text-espresso px-3 py-2">Clear</button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenuPanel" class="hidden md:hidden border-t border-linen bg-ivory px-4 py-3 space-y-2 text-sm font-medium text-walnut">
+      <a href="#collections" class="mobile-nav-link block py-1.5 hover:text-teak">Collections</a>
+      <a href="#catalog" class="mobile-nav-link block py-1.5 hover:text-teak">Catalog</a>
+      <a href="#craftsmanship" class="mobile-nav-link block py-1.5 hover:text-teak">Craftsmanship</a>
+      <a href="#faq" class="mobile-nav-link block py-1.5 hover:text-teak">FAQ</a>
+      <a href="#contact" class="mobile-nav-link block py-1.5 hover:text-teak">Contact</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero Section with Storefront Video -->
+    <section class="relative overflow-hidden bg-espresso text-ivory">
+      <div class="absolute inset-0">
+        <video
+          id="heroVideo"
+          class="w-full h-full object-cover opacity-60"
+          src="https://www.baranifurniture.com/cdn/shop/videos/c/vp/fc157771a2f140fc9845a903d4006fb6/fc157771a2f140fc9845a903d4006fb6.HD-1080p-7.2Mbps-91152882.mp4?v=0"
+          poster="https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_21kdhn21kdhn21kd.png?v=1781260348"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
+        <div class="absolute inset-0 bg-gradient-to-r from-espresso/90 via-espresso/60 to-espresso/25"></div>
+      </div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36">
+        <div class="max-w-2xl">
+          <p class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-brass font-semibold mb-4">
+            <span class="w-6 h-px bg-brass"></span>
+            Barani Furniture &bull; Official Collection
+          </p>
+          <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold leading-[1.1] tracking-tight text-ivory">
+            Warmth Carved in Solid Teak.
+          </h1>
+          <p class="mt-5 text-base sm:text-lg text-linen/90 leading-relaxed max-w-xl">
+            Explore our complete 60-piece collection of solid teak sofas, wardrobes, dining sets, TV showcases, pooja cupboards, and office seating.
+          </p>
+          <div class="mt-8 flex flex-wrap items-center gap-3.5">
+            <a href="#catalog" class="bg-brass hover:bg-teak text-espresso hover:text-ivory font-semibold px-6 py-3.5 rounded-full text-sm transition-colors shadow-lg">
+              Explore Full Catalog
+            </a>
+            <button id="heroTeakFilterBtn" type="button" class="border border-linen/40 hover:border-brass text-ivory hover:text-brass font-medium px-6 py-3.5 rounded-full text-sm transition-colors backdrop-blur-sm">
+              Shop Signature Teak
+            </button>
+            <button id="toggleHeroVideoBtn" type="button" class="border border-white/25 hover:border-brass text-linen/90 hover:text-brass px-4 py-3.5 rounded-full text-xs font-medium transition-colors backdrop-blur-sm">
+              Pause Video
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curated Room Collections -->
+    <section id="collections" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+        <div>
+          <p class="text-xs uppercase tracking-[0.2em] text-teak font-semibold">Curated Spaces</p>
+          <h2 class="font-serif text-2xl sm:text-3xl font-semibold text-espresso mt-1">Browse by Room</h2>
+        </div>
+        <p class="text-sm text-walnut max-w-md">Select a space below to filter our full catalog instantly.</p>
+      </div>
+
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <button type="button" data-room-filter="Living Room & Sofas" class="room-card group relative rounded-2xl overflow-hidden aspect-[4/3] text-left shadow-sm">
+          <img src="https://cdn.shopify.com/s/files/1/0696/1178/2331/files/image37.png?v=1767450889" alt="Living Room & Teak Sofas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <div class="absolute inset-0 bg-gradient-to-t from-espresso/80 via-espresso/20 to-transparent"></div>
+          <div class="absolute bottom-3.5 left-4 right-4 text-ivory">
+            <span class="text-[11px] uppercase tracking-wider text-brass font-semibold">19 Pieces</span>
+            <h3 class="font-serif text-lg sm:text-xl font-semibold">Living Room &amp; Sofas</h3>
+          </div>
+        </button>
+
+        <button type="button" data-room-filter="Bedroom & Wardrobes" class="room-card group relative rounded-2xl overflow-hidden aspect-[4/3] text-left shadow-sm">
+          <img src="https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_c5p7dpc5p7dpc5p7.png?v=1782718432" alt="Bedroom Wardrobes & Dressing Tables" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <div class="absolute inset-0 bg-gradient-to-t from-espresso/80 via-espresso/20 to-transparent"></div>
+          <div class="absolute bottom-3.5 left-4 right-4 text-ivory">
+            <span class="text-[11px] uppercase tracking-wider text-brass font-semibold">13 Pieces</span>
+            <h3 class="font-serif text-lg sm:text-xl font-semibold">Bedroom &amp; Wardrobes</h3>
+          </div>
+        </button>
+
+        <button type="button" data-room-filter="Dining" class="room-card group relative rounded-2xl overflow-hidden aspect-[4/3] text-left shadow-sm">
+          <img src="https://cdn.shopify.com/s/files/1/0696/1178/2331/files/4b9b3ba0-ec24-4b14-931e-6d082c6efa46.jpg?v=1781104934" alt="Teak & Modern Dining Sets" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <div class="absolute inset-0 bg-gradient-to-t from-espresso/80 via-espresso/20 to-transparent"></div>
+          <div class="absolute bottom-3.5 left-4 right-4 text-ivory">
+            <span class="text-[11px] uppercase tracking-wider text-brass font-semibold">3 Pieces</span>
+            <h3 class="font-serif text-lg sm:text-xl font-semibold">Dining</h3>
+          </div>
+        </button>
+
+        <button type="button" data-room-filter="Office & Study" class="room-card group relative rounded-2xl overflow-hidden aspect-[4/3] text-left shadow-sm">
+          <img src="https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_nou5zsnou5zsnou5_1becdfdf-8409-4981-88ce-18de37c29461.png?v=1781775119" alt="Executive Chairs & Study Tables" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <div class="absolute inset-0 bg-gradient-to-t from-espresso/80 via-espresso/20 to-transparent"></div>
+          <div class="absolute bottom-3.5 left-4 right-4 text-ivory">
+            <span class="text-[11px] uppercase tracking-wider text-brass font-semibold">16 Pieces</span>
+            <h3 class="font-serif text-lg sm:text-xl font-semibold">Office &amp; Study</h3>
+          </div>
+        </button>
+
+        <button type="button" data-room-filter="TV Units & Worship" class="room-card group relative rounded-2xl overflow-hidden aspect-[4/3] text-left shadow-sm">
+          <img src="https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_5vvfz55vvfz55vvf.png?v=1782714044" alt="TV Showcases & Pooja Cupboards" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <div class="absolute inset-0 bg-gradient-to-t from-espresso/80 via-espresso/20 to-transparent"></div>
+          <div class="absolute bottom-3.5 left-4 right-4 text-ivory">
+            <span class="text-[11px] uppercase tracking-wider text-brass font-semibold">6 Pieces</span>
+            <h3 class="font-serif text-lg sm:text-xl font-semibold">TV Units &amp; Worship</h3>
+          </div>
+        </button>
+
+        <button type="button" data-room-filter="Handicraft & Decor" class="room-card group relative rounded-2xl overflow-hidden aspect-[4/3] text-left shadow-sm">
+          <img src="https://cdn.shopify.com/s/files/1/0696/1178/2331/files/ELEPHANT.jpg?v=1780655245" alt="Teak Handicraft & Storage Decor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <div class="absolute inset-0 bg-gradient-to-t from-espresso/80 via-espresso/20 to-transparent"></div>
+          <div class="absolute bottom-3.5 left-4 right-4 text-ivory">
+            <span class="text-[11px] uppercase tracking-wider text-brass font-semibold">2 Pieces</span>
+            <h3 class="font-serif text-lg sm:text-xl font-semibold">Handicraft &amp; Decor</h3>
+          </div>
+        </button>
+      </div>
+    </section>
+
+    <!-- Main Catalog Section -->
+    <section id="catalog" class="bg-sand/55 border-y border-linen py-14 sm:py-20 wood-grain-bg">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
+          <div>
+            <p class="text-xs uppercase tracking-[0.2em] text-teak font-semibold">The Complete Collection</p>
+            <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-espresso mt-1">All Products &amp; Galleries</h2>
+          </div>
+
+          <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+            <select id="sortSelect" aria-label="Sort products" class="bg-ivory border border-linen rounded-full px-4 py-2 text-xs sm:text-sm text-espresso font-medium focus:outline-none focus:ring-2 focus:ring-teak/40">
+              <option value="featured">Sort: Featured</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="savings">Biggest Savings</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Category Tabs -->
+        <div id="categoryTabs" class="flex flex-wrap gap-2 mb-6">
+          <button type="button" data-category="All" class="cat-tab px-3.5 py-2 rounded-full text-xs sm:text-sm font-medium transition-colors bg-espresso text-ivory">All</button>
+          <button type="button" data-category="Living Room & Sofas" class="cat-tab px-3.5 py-2 rounded-full text-xs sm:text-sm font-medium transition-colors bg-ivory text-walnut border border-linen hover:border-teak">Living Room &amp; Sofas</button>
+          <button type="button" data-category="Bedroom & Wardrobes" class="cat-tab px-3.5 py-2 rounded-full text-xs sm:text-sm font-medium transition-colors bg-ivory text-walnut border border-linen hover:border-teak">Bedroom &amp; Wardrobes</button>
+          <button type="button" data-category="Dining" class="cat-tab px-3.5 py-2 rounded-full text-xs sm:text-sm font-medium transition-colors bg-ivory text-walnut border border-linen hover:border-teak">Dining</button>
+          <button type="button" data-category="Office & Study" class="cat-tab px-3.5 py-2 rounded-full text-xs sm:text-sm font-medium transition-colors bg-ivory text-walnut border border-linen hover:border-teak">Office &amp; Study</button>
+          <button type="button" data-category="TV Units & Worship" class="cat-tab px-3.5 py-2 rounded-full text-xs sm:text-sm font-medium transition-colors bg-ivory text-walnut border border-linen hover:border-teak">TV Units &amp; Worship</button>
+          <button type="button" data-category="Handicraft & Decor" class="cat-tab px-3.5 py-2 rounded-full text-xs sm:text-sm font-medium transition-colors bg-ivory text-walnut border border-linen hover:border-teak">Handicraft &amp; Decor</button>
+        </div>
+
+        <!-- Active Filter Banner -->
+        <div id="activeFilterStatus" class="hidden mb-6 flex items-center justify-between bg-ivory border border-linen rounded-xl px-4 py-2.5 text-sm text-walnut">
+          <span id="activeFilterText">Showing all items</span>
+          <button id="resetAllFiltersBtn" type="button" class="text-teak font-semibold hover:underline text-xs uppercase tracking-wider">Reset Filters</button>
+        </div>
+
+        <!-- Product Grid -->
+        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="hidden text-center py-16 bg-ivory rounded-2xl border border-linen">
+          <p class="font-serif text-xl text-espresso">No pieces match your current filter.</p>
+          <p class="text-sm text-walnut mt-1">Try clearing your search or switching back to all categories.</p>
+          <button id="emptyResetBtn" type="button" class="mt-4 bg-teak hover:bg-teakDark text-ivory px-5 py-2.5 rounded-full text-sm font-medium transition-colors">Show All Furniture</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Craftsmanship & Why Barani -->
+    <section id="craftsmanship" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-5">
+          <div class="rounded-2xl overflow-hidden shadow-md border border-linen">
+            <img src="https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_7hl7vn7hl7vn7hl7.png?v=1781445228" alt="Hand-carved solid Indian teak wood craftsmanship" class="w-full h-auto object-cover" />
+          </div>
+        </div>
+        <div class="lg:col-span-7 space-y-6">
+          <div>
+            <p class="text-xs uppercase tracking-[0.2em] text-teak font-semibold">The Barani Standard</p>
+            <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-espresso mt-1">Built for Generations, Priced for Today.</h2>
+            <p class="mt-3 text-walnut leading-relaxed">
+              From hand-carved Indian teak wood diwans and 5-seater sofa sets to UV-coated wardrobes, TV showcases, and ergonomic office chairs, every piece brings warmth and lasting value to your space.
+            </p>
+          </div>
+
+          <div class="grid sm:grid-cols-3 gap-4">
+            <div class="bg-sand/70 border border-linen rounded-xl p-4">
+              <p class="font-serif text-lg font-semibold text-espresso">Seasoned Teak</p>
+              <p class="text-xs text-walnut mt-1 leading-relaxed">Rich natural grain and sturdy joinery crafted for long-lasting daily use.</p>
+            </div>
+            <div class="bg-sand/70 border border-linen rounded-xl p-4">
+              <p class="font-serif text-lg font-semibold text-espresso">Direct Pricing</p>
+              <p class="text-xs text-walnut mt-1 leading-relaxed">Transparent seasonal discounts across all 59 furniture &amp; decor pieces.</p>
+            </div>
+            <div class="bg-sand/70 border border-linen rounded-xl p-4">
+              <p class="font-serif text-lg font-semibold text-espresso">Personal Support</p>
+              <p class="text-xs text-walnut mt-1 leading-relaxed">Direct consultation for finish preferences, dimensions, and delivery scheduling.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Care & Delivery FAQ Section -->
+    <section id="faq" class="bg-sand/45 border-t border-linen py-14 sm:py-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+          <p class="text-xs uppercase tracking-[0.2em] text-teak font-semibold">Good to Know</p>
+          <h2 class="font-serif text-2xl sm:text-3xl font-semibold text-espresso mt-1">Frequently Asked Questions</h2>
+        </div>
+        <div id="faqList" class="space-y-3">
+          <div class="bg-ivory border border-linen rounded-xl overflow-hidden">
+            <button type="button" data-faq-toggle class="w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-serif text-base sm:text-lg font-semibold text-espresso">
+              <span>How do I care for solid teak wood furniture?</span>
+              <span class="faq-icon text-teak text-xl leading-none">+</span>
+            </button>
+            <div class="faq-body hidden px-5 pb-4 text-sm text-walnut leading-relaxed">
+              Wipe daily with a soft, dry cotton or microfiber cloth and avoid harsh chemical sprays. Keep pieces away from prolonged direct sunlight or standing moisture to preserve the natural embossed finish.
+            </div>
+          </div>
+          <div class="bg-ivory border border-linen rounded-xl overflow-hidden">
+            <button type="button" data-faq-toggle class="w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-serif text-base sm:text-lg font-semibold text-espresso">
+              <span>How does ordering and delivery work?</span>
+              <span class="faq-icon text-teak text-xl leading-none">+</span>
+            </button>
+            <div class="faq-body hidden px-5 pb-4 text-sm text-walnut leading-relaxed">
+              Add your preferred pieces to the cart and submit an order callback request, or use the inquiry form below. Our team will confirm stock, delivery timelines, and installation support before finalizing your order.
+            </div>
+          </div>
+          <div class="bg-ivory border border-linen rounded-xl overflow-hidden">
+            <button type="button" data-faq-toggle class="w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-serif text-base sm:text-lg font-semibold text-espresso">
+              <span>What is your return and damage policy?</span>
+              <span class="faq-icon text-teak text-xl leading-none">+</span>
+            </button>
+            <div class="faq-body hidden px-5 pb-4 text-sm text-walnut leading-relaxed">
+              For standard (non-customized) products that arrive damaged or defective, report the issue within 24 hours of delivery. Approved refunds are processed to the original payment method within 5–7 working days.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Newsletter Section -->
+    <section id="contact" class="bg-espresso text-ivory py-16 sm:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12">
+        <div>
+          <p class="text-xs uppercase tracking-[0.2em] text-brass font-semibold">Get in Touch</p>
+          <h2 class="font-serif text-3xl sm:text-4xl font-semibold mt-1">Visit or Enquire With Us</h2>
+          <p class="mt-3 text-linen/80 text-sm sm:text-base max-w-md leading-relaxed">
+            Have a question about teak finishes, custom dimensions, or bulk orders? Send us a message and our team will reach out promptly.
+          </p>
+
+          <div class="mt-8 p-6 rounded-2xl bg-white/5 border border-white/10 max-w-md">
+            <h3 class="font-serif text-lg font-semibold text-ivory">Join Our Email List</h3>
+            <p class="text-xs text-linen/75 mt-1">Get exclusive deals and early access to new products.</p>
+            <form id="newsletterForm" class="mt-4 flex flex-col sm:flex-row gap-2.5">
+              <input id="newsletterEmail" type="email" required placeholder="Enter your email" class="flex-1 bg-ivory/10 border border-white/20 rounded-full px-4 py-2.5 text-sm text-ivory placeholder:text-linen/50 focus:outline-none focus:border-brass" />
+              <button type="submit" class="bg-brass hover:bg-teak text-espresso hover:text-ivory font-semibold px-5 py-2.5 rounded-full text-sm transition-colors shrink-0">Subscribe</button>
+            </form>
+          </div>
+        </div>
+
+        <form id="contactForm" class="bg-ivory text-espresso rounded-2xl p-6 sm:p-8 shadow-xl space-y-4">
+          <h3 class="font-serif text-2xl font-semibold">Send an Inquiry</h3>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="contactName" class="block text-xs font-semibold uppercase tracking-wider text-walnut mb-1">Name</label>
+              <input id="contactName" type="text" required placeholder="Your name" class="w-full bg-sand/50 border border-linen rounded-lg px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-teak/40" />
+            </div>
+            <div>
+              <label for="contactPhone" class="block text-xs font-semibold uppercase tracking-wider text-walnut mb-1">Phone</label>
+              <input id="contactPhone" type="tel" placeholder="+91 98765 43210" class="w-full bg-sand/50 border border-linen rounded-lg px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-teak/40" />
+            </div>
+          </div>
+          <div>
+            <label for="contactEmail" class="block text-xs font-semibold uppercase tracking-wider text-walnut mb-1">Email *</label>
+            <input id="contactEmail" type="email" required placeholder="you@example.com" class="w-full bg-sand/50 border border-linen rounded-lg px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-teak/40" />
+          </div>
+          <div>
+            <label for="contactComment" class="block text-xs font-semibold uppercase tracking-wider text-walnut mb-1">Comment</label>
+            <textarea id="contactComment" rows="3" required placeholder="Tell us which piece you're interested in..." class="w-full bg-sand/50 border border-linen rounded-lg px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-teak/40"></textarea>
+          </div>
+          <button type="submit" class="w-full bg-teak hover:bg-teakDark text-ivory font-semibold py-3 rounded-full text-sm transition-colors shadow-sm">
+            Submit Inquiry
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#18120E] text-linen/70 text-xs py-8 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>&copy; 2026 Barani Furniture. Handcrafted Teak &amp; Home Living.</p>
+      <div class="flex flex-wrap items-center gap-5">
+        <button type="button" data-policy="privacy" class="hover:text-brass transition-colors">Privacy Policy</button>
+        <button type="button" data-policy="terms" class="hover:text-brass transition-colors">Terms of Service</button>
+        <button type="button" data-policy="shipping" class="hover:text-brass transition-colors">Shipping Policy</button>
+        <button type="button" data-policy="refund" class="hover:text-brass transition-colors">Refund Policy</button>
+        <a href="#contact" class="hover:text-brass transition-colors">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Quick View Modal with Multi-Image Gallery -->
+  <div id="quickViewModal" class="hidden fixed inset-0 z-50 bg-espresso/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-ivory rounded-2xl max-w-3xl w-full overflow-hidden shadow-2xl border border-linen grid sm:grid-cols-2 max-h-[90vh]">
+      <div class="bg-sand flex flex-col justify-between p-4">
+        <div class="relative aspect-[4/3] rounded-xl overflow-hidden bg-ivory">
+          <img id="qvImage" src="" alt="" class="w-full h-full object-contain" />
+          <button id="qvPrevImgBtn" type="button" aria-label="Previous image" class="hidden absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-espresso/75 hover:bg-espresso text-ivory flex items-center justify-center">&lsaquo;</button>
+          <button id="qvNextImgBtn" type="button" aria-label="Next image" class="hidden absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-espresso/75 hover:bg-espresso text-ivory flex items-center justify-center">&rsaquo;</button>
+        </div>
+        <div id="qvThumbs" class="mt-3 flex gap-2 overflow-x-auto pb-1"></div>
+      </div>
+
+      <div class="p-6 flex flex-col justify-between overflow-y-auto">
+        <div>
+          <div class="flex items-start justify-between gap-2">
+            <span id="qvCategory" class="text-[11px] uppercase tracking-[0.18em] text-teak font-semibold"></span>
+            <button id="closeQuickViewBtn" type="button" aria-label="Close quick view" class="p-1 rounded-full hover:bg-sand text-walnut">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+          </div>
+          <h3 id="qvTitle" class="font-serif text-2xl font-semibold text-espresso mt-1"></h3>
+
+          <div class="mt-4 flex items-baseline gap-2.5">
+            <span id="qvSalePrice" class="text-xl font-bold text-espresso"></span>
+            <span id="qvRegularPrice" class="text-sm text-walnut/60 line-through"></span>
+            <span id="qvSavingsBadge" class="text-xs font-semibold text-teak bg-sand px-2 py-0.5 rounded-full"></span>
+          </div>
+
+          <p id="qvDescription" class="mt-4 text-sm text-walnut leading-relaxed"></p>
+        </div>
+
+        <div class="mt-6 space-y-2.5">
+          <button id="qvAddToCartBtn" type="button" class="w-full bg-espresso hover:bg-teak text-ivory font-semibold py-3 rounded-full text-sm transition-colors">
+            Add to Cart
+          </button>
+          <button id="qvEnquireBtn" type="button" class="w-full border border-linen hover:border-teak text-espresso font-medium py-2.5 rounded-full text-sm transition-colors">
+            Enquire About This Piece
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide-Over Cart Drawer -->
+  <div id="cartDrawerOverlay" class="hidden fixed inset-0 z-50 bg-espresso/50 backdrop-blur-sm flex justify-end">
+    <div class="bg-ivory w-full max-w-md h-full flex flex-col shadow-2xl border-l border-linen">
+      <div class="px-6 py-4 border-b border-linen flex items-center justify-between">
+        <div>
+          <h3 class="font-serif text-xl font-semibold text-espresso">Your Cart</h3>
+          <p id="cartDrawerSubtitle" class="text-xs text-walnut">0 items selected</p>
+        </div>
+        <button id="closeCartBtn" type="button" aria-label="Close cart" class="p-2 rounded-full hover:bg-sand text-walnut">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div id="cartItemsList" class="flex-1 overflow-y-auto p-6 space-y-4"></div>
+
+      <div id="cartFooter" class="border-t border-linen bg-sand/50 p-6 space-y-4">
+        <div class="space-y-1.5 text-sm">
+          <div class="flex justify-between text-walnut">
+            <span>Total Savings</span>
+            <span id="cartSavingsTotal" class="font-medium text-teak">Rs. 0</span>
+          </div>
+          <div class="flex justify-between text-base font-bold text-espresso">
+            <span>Subtotal</span>
+            <span id="cartSubtotal">Rs. 0</span>
+          </div>
+        </div>
+
+        <form id="checkoutOrderForm" class="space-y-2.5 pt-2 border-t border-linen">
+          <p class="text-xs font-semibold uppercase tracking-wider text-walnut">Quick Order Request</p>
+          <input id="orderCustomerName" type="text" required placeholder="Your Name" class="w-full bg-ivory border border-linen rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-teak/40" />
+          <input id="orderCustomerPhone" type="tel" required placeholder="Phone / WhatsApp Number" class="w-full bg-ivory border border-linen rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-teak/40" />
+          <button id="placeOrderBtn" type="submit" class="w-full bg-teak hover:bg-teakDark text-ivory font-semibold py-3 rounded-full text-sm transition-colors">
+            Request Order Callback
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Policy Modal -->
+  <div id="policyModal" class="hidden fixed inset-0 z-50 bg-espresso/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-ivory rounded-2xl max-w-lg w-full p-6 sm:p-7 shadow-2xl border border-linen">
+      <div class="flex items-start justify-between gap-3">
+        <h3 id="policyTitle" class="font-serif text-2xl font-semibold text-espresso"></h3>
+        <button id="closePolicyBtn" type="button" aria-label="Close policy" class="p-1 rounded-full hover:bg-sand text-walnut">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <p id="policyBody" class="mt-4 text-sm text-walnut leading-relaxed"></p>
+      <button id="ackPolicyBtn" type="button" class="mt-6 w-full bg-espresso hover:bg-teak text-ivory font-semibold py-2.5 rounded-full text-sm transition-colors">Close</button>
+    </div>
+  </div>
+
+  <!-- Order Confirmation Modal -->
+  <div id="orderConfirmModal" class="hidden fixed inset-0 z-50 bg-espresso/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-ivory rounded-2xl max-w-md w-full p-6 sm:p-7 shadow-2xl border border-linen text-center">
+      <div class="w-12 h-12 rounded-full bg-sand text-teak mx-auto flex items-center justify-center font-serif text-2xl font-bold">&#10003;</div>
+      <h3 class="font-serif text-2xl font-semibold text-espresso mt-3">Order Request Received</h3>
+      <p id="orderConfirmSummary" class="mt-2 text-sm text-walnut leading-relaxed"></p>
+      <button id="closeOrderConfirmBtn" type="button" class="mt-6 w-full bg-teak hover:bg-teakDark text-ivory font-semibold py-2.5 rounded-full text-sm transition-colors">Continue Browsing</button>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="hidden fixed bottom-5 right-5 z-50 bg-espresso text-ivory px-4 py-3 rounded-xl shadow-xl border border-brass/40 text-sm flex items-center gap-2.5 max-w-sm">
+    <span class="w-2 h-2 rounded-full bg-brass shrink-0"></span>
+    <span id="toastMessage"></span>
+  </div>
+
+  <script>
+    const PRODUCTS = [
+      {
+        id: 'dining-6-seater-teak',
+        title: 'Dining Table Six Seater (Teak Wood)',
+        category: 'Dining',
+        isTeak: true,
+        salePrice: 35000,
+        regularPrice: 42000,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/4b9b3ba0-ec24-4b14-931e-6d082c6efa46.jpg?v=1781104934',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/580c9e2f-4530-4f7b-b2b2-261daffeb5b4.jpg?v=1781104803'
+        ],
+        description: 'Generously proportioned six-seater dining table crafted in solid teak wood for family gatherings.'
+      },
+      {
+        id: 'luxury-teak-5-seater-teal',
+        title: 'Luxury Teak Wood 5-Seater Sofa Set – Teal Blue',
+        category: 'Living Room & Sofas',
+        isTeak: true,
+        salePrice: 28000,
+        regularPrice: 56000,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/image41.png?v=1767451376',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Frame_50.png?v=1767451398',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Frame_49.png?v=1767451398',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Frame_51.png?v=1767451398'
+        ],
+        description: 'Solid seasoned teak wood 5-seater sofa set with deep teal upholstered seating and hand-finished wooden arms.'
+      },
+      {
+        id: 'premium-teak-5-seater',
+        title: 'Premium Teak Wood 5-Seater Sofa Set',
+        category: 'Living Room & Sofas',
+        isTeak: true,
+        salePrice: 28000,
+        regularPrice: 56000,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/image37.png?v=1767450889',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/image_38.png?v=1767450917',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/image_39.png?v=1767450917',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/image_40.png?v=1767450916'
+        ],
+        description: 'Classic hand-carved seasoned teak wood 5-seater sofa set with thick upholstered seating built for generations.'
+      },
+      {
+        id: 'recron-5-seater-navy',
+        title: 'Recron Luxury 5-Seater Sofa – Navy Blue & Cream',
+        category: 'Living Room & Sofas',
+        isTeak: false,
+        salePrice: 20500,
+        regularPrice: 41000,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/image33.png?v=1767449077',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Frame_35.png?v=1767449099',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Frame_36.png?v=1767449098',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Frame_37.png?v=1767449098'
+        ],
+        description: 'Refined navy blue and cream 5-seater sofa with plush Recron fiber filling and wide family seating.'
+      },
+      {
+        id: 'recron-5-seater-graphite',
+        title: 'Recron Luxury 5-Seater Sofa – Graphite Grey',
+        category: 'Living Room & Sofas',
+        isTeak: false,
+        salePrice: 20500,
+        regularPrice: null,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Frame30.png?v=1767448641',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Frame_31.png?v=1767448662',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Frame_32.png?v=1767448661',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Frame_33.png?v=1767448661'
+        ],
+        description: 'Bold graphite grey 5-seater sofa with superior lumbar support and soft Recron fiber cushioning.'
+      },
+      {
+        id: 'heritage-3-seater-teal',
+        title: 'Heritage Luxury 3-Seater Sofa – Oceanic Teal',
+        category: 'Living Room & Sofas',
+        isTeak: false,
+        salePrice: 20500,
+        regularPrice: 41000,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/1766517210648.png?v=1767446967',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/1766517556840.png?v=1767446983',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/image_13.png?v=1767446983',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/image_14.png?v=1767446983'
+        ],
+        description: 'Dual-tone Oceanic Teal and Dove Grey woven-fabric 3-seater sofa with sculpted curved armrests.'
+      },
+      {
+        id: 'sofa-come-bed-1',
+        title: 'Sofa Come Bed (Convertible Corduroy)',
+        category: 'Living Room & Sofas',
+        isTeak: false,
+        salePrice: 19499,
+        regularPrice: 32500,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_p6c9mlp6c9mlp6c9.png?v=1782213325',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_p6c9mlp6c9mlp6c9_61bd862a-3a2f-4746-8bfd-3392ffe5bdfd.png?v=1782213588',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_p6c9mlp6c9mlp6c9_f8685f99-1651-4a89-8f07-3d7e594cff4d.png?v=1782213752',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_p6c9mlp6c9mlp6c9_dc7b4579-6cfd-4c9a-a1cf-342c6748b1ce.png?v=1782214132',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_p6c9mlp6c9mlp6c9_487e7aec-c7f2-488a-9351-0723250f94ef.png?v=1782218525',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_p6c9mlp6c9mlp6c9_ec137381-7b82-48c7-a26c-1dc400aff197.png?v=1782218814'
+        ],
+        description: 'Convertible 3-seat folding floor sofa bed in breathable pinstripe corduroy with high-density foam.'
+      },
+      {
+        id: 'teapoy-table-5-set',
+        title: 'Teapoy Table with 4 Stools (Teak Wood)',
+        category: 'Living Room & Sofas',
+        isTeak: true,
+        salePrice: 18500,
+        regularPrice: 36499,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_iv5fbbiv5fbbiv5f.png?v=1781506419',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_iv5fbbiv5fbbiv5f_1.png?v=1781442536',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_ij1a27ij1a27ij1a_1.png?v=1781505394'
+        ],
+        description: '5-piece barrel-shaped teak wood teapoy table and four matching stools with deep relief grapevine carving.'
+      },
+      {
+        id: 'rocking-chair-teak',
+        title: 'Rocking Chair (Teak Wood)',
+        category: 'Living Room & Sofas',
+        isTeak: true,
+        salePrice: 18499,
+        regularPrice: 26000,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/WhatsAppImage2026-06-05at3.43.23PM.jpg?v=1780657896',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/WhatsAppImage2026-06-05at3.43.24PM_1.jpg?v=1780813971',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/WhatsApp_Image_2026-06-05_at_4.48.59_PM.jpg?v=1780658480'
+        ],
+        description: 'Handcrafted teak wood rocking chair with rich natural grain and smooth rhythmic motion.'
+      },
+      {
+        id: 'tv-showcase-twotone',
+        title: 'TV Showcase (Two-Tone Marble & Wood)',
+        category: 'TV Units & Worship',
+        isTeak: false,
+        salePrice: 17499,
+        regularPrice: 24800,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_5vvfz55vvfz55vvf.png?v=1782714044',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_5vvfz55vvfz55vvf_1f378553-1286-43f1-b14c-69905b487296.png?v=1782713583',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_5vvfz55vvfz55vvf_5705e5db-7e3d-44f9-8446-87a805396977.png?v=1782714834',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_5vvfz55vvfz55vvf_8e41e684-7f3f-45d8-8589-7fa7ad738b73.png?v=1782714950'
+        ],
+        description: 'Suitable for 55" TVs with wood-grain finish, gold marble laminate, slat accents, and built-in top lighting.'
+      },
+      {
+        id: 'triple-door-wardrobe',
+        title: 'Triple Door Wardrobe (Brown Maple & White)',
+        category: 'Bedroom & Wardrobes',
+        isTeak: false,
+        salePrice: 15999,
+        regularPrice: 24600,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_c5p7dpc5p7dpc5p7.png?v=1782718432',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_c5p7dpc5p7dpc5p7_be8697f8-c76e-4483-a697-16b75856dc9a.png?v=1782719296',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_c5p7dpc5p7dpc5p7_c06ed063-5808-4cff-beb9-a6225a62afaf.png?v=1782720851',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_c5p7dpc5p7dpc5p7_ea7980cc-800f-4699-bbef-d077d1f03f86.png?v=1782721729'
+        ],
+        description: '7 storage cabinets, cloth hanger rod, sleek long handles, and lock included in pre-laminated engineered wood.'
+      },
+      {
+        id: 'diwan-sofa-teak-1',
+        title: 'Diwan Sofa (Hand-Carved Teak Wood)',
+        category: 'Living Room & Sofas',
+        isTeak: true,
+        salePrice: 15999,
+        regularPrice: 23400,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_7hl7vn7hl7vn7hl7.png?v=1781445228',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_7hl7vn7hl7vn7hl7_b4c8b45e-660b-4ed6-919f-c59426e1386e.png?v=1781443083',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_7hl7vn7hl7vn7hl7_5dc80f65-9e06-4a57-84d8-2296fbca1da7.png?v=1781443183',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_7hl7vn7hl7vn7hl7_eb4fbd29-3d6a-4763-ae33-d46b73eee045.png?v=1781443382',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_7hl7vn7hl7vn7hl7_ac4171ca-2b65-489e-bc0e-1cc956e4a412.png?v=1781443865'
+        ],
+        description: 'Hand-carved Indian teak wood diwan with embossed finish, delivered pre-assembled.'
+      },
+      {
+        id: 'sofa-come-bed-wood',
+        title: 'Sofa Come Bed (Solid Wood & Leather)',
+        category: 'Living Room & Sofas',
+        isTeak: true,
+        salePrice: 15999,
+        regularPrice: 26800,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/IMG_0791_JPG.jpg?v=1780999972',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/sofa.jpg?v=1781002276',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/IMG_0798_JPG_ba4a247b-31c5-4ddd-97ca-d5df02bf61d2.jpg?v=1781003096'
+        ],
+        description: 'Portable folding sofa bed crafted with solid wood, metal frame, leather, and removable easy-clean cover.'
+      },
+      {
+        id: 'pu-foam-5-seater-olive',
+        title: 'PU Foam Comfort 5-Seater Sofa – Olive Green',
+        category: 'Living Room & Sofas',
+        isTeak: false,
+        salePrice: 15000,
+        regularPrice: 30000,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/image31.png?v=1767450085',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Frame_15.png?v=1767450106',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/image_29.png?v=1767450105',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/image_30.png?v=1767450106'
+        ],
+        description: 'Rich olive green 5-seater sofa with high-density PU foam cushioning for firm daily family support.'
+      },
+      {
+        id: 'diwan-sofa-teak',
+        title: 'Diwan Sofa (Classic Teak Wood)',
+        category: 'Living Room & Sofas',
+        isTeak: true,
+        salePrice: 14999,
+        regularPrice: 22400,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_tsqrm8tsqrm8tsqr_e2a9b7d4-384c-4fee-b441-35dd0de33682.png?v=1781441646',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_tsqrm8tsqrm8tsqr_3b617e15-c6b1-40a7-bf8a-03df3db5a390.png?v=1781442012',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_tsqrm8tsqrm8tsqr.png?v=1781441575',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_tsqrm8tsqrm8tsqr_50fd7ee9-351f-487c-a87e-a70cff8125b2.png?v=1781441739'
+        ],
+        description: 'Spacious 3-seater solid teak wood diwan with matching bolsters and cushioned seats.'
+      },
+      {
+        id: 'sofa-3-seater',
+        title: 'Sofa (3 Seater Cushion Sofa)',
+        category: 'Living Room & Sofas',
+        isTeak: false,
+        salePrice: 14000,
+        regularPrice: 18300,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_7a0ndm7a0ndm7a0n_1.png?v=1781262001',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_p4jtkkp4jtkkp4jt.png?v=1781262821',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_2j29rj2j29rj2j29_1.png?v=1781262314',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_n8ahc1n8ahc1n8ah.png?v=1781262987',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/image7_1ffee561-57c8-4af5-a55c-ad41ace23126.png?v=1781264186',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_y8p9lzy8p9lzy8p9.png?v=1781446860'
+        ],
+        description: 'Comfortable 3-seater sofa with breathable, washable protective upholstery.'
+      },
+      {
+        id: 'wood-beero-marble',
+        title: 'Wood Beero (White Marble UV Wardrobe)',
+        category: 'Bedroom & Wardrobes',
+        isTeak: false,
+        salePrice: 13000,
+        regularPrice: 15000,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/3.1_345a6bf7-bfcc-4012-98a6-164416982ada.png?v=1785916214',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/3.2_0685656d-26ba-4120-80ba-605614e3c270.png?v=1785916213',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/3.33.png?v=1785916214',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/3_bdd63ca1-5d54-4fe1-bfe9-d07a5272be4d.png?v=1785916214'
+        ],
+        description: 'High-gloss UV white marble finish 2-door wardrobe with full-length dressing mirror and lower drawer.'
+      },
+      {
+        id: 'wood-beero-grey',
+        title: 'Wood Beero (Matte Dark Grey 3-Door)',
+        category: 'Bedroom & Wardrobes',
+        isTeak: false,
+        salePrice: 13000,
+        regularPrice: 20000,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/0..0.png?v=1785915768',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/0.0.png?v=1785915768',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/0.01.png?v=1785915768',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/1.00.png?v=1785915768'
+        ],
+        description: '3-door UV-coated wardrobe in matte dark grey with full-length mirror, external drawer, and security locks.'
+      },
+      {
+        id: 'dressing-table-classic',
+        title: 'Dressing Table (Classical Arched Mirror)',
+        category: 'Bedroom & Wardrobes',
+        isTeak: false,
+        salePrice: 13000,
+        regularPrice: 15000,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_7xkwfh7xkwfh7xkw.png?v=1781336919',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_zfmoqzfmoqzfmoqz.png?v=1781336919',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_d5jpsod5jpsod5jp.png?v=1781336920',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_youv56youv56youv.png?v=1781336920',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_kj9y5pkj9y5pkj9y.png?v=1781336919',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_wi0hn4wi0hn4wi0h_a600a556-512f-43c1-bbdc-da0edd7d972a.png?v=1781337902'
+        ],
+        description: 'Classical vanity dressing area with ornate console table and large arched mirror.'
+      },
+      {
+        id: 'recron-3-seater-blush',
+        title: 'Recron Luxury 3-Seater Sofa – Blush Pink',
+        category: 'Living Room & Sofas',
+        isTeak: false,
+        salePrice: 13000,
+        regularPrice: 26000,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/image17.png?v=1767442490',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Frame_19.png?v=1767442513',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/image_18.png?v=1767442514',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/image_19.png?v=1767442513'
+        ],
+        description: 'Soothing blush pink 3-seater sofa with beige frame, soft leatherette upholstery, and Recron fiber filling.'
+      },
+      {
+        id: 'recron-3-seater-tan',
+        title: 'Recron Luxury 3-Seater Sofa – Tan Edition',
+        category: 'Living Room & Sofas',
+        isTeak: false,
+        salePrice: 13000,
+        regularPrice: 26000,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/image_1.jpg?v=1767295639',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/image_2.jpg?v=1767295713',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Frame_4.jpg?v=1767295726',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/image3.svg?v=1767295261'
+        ],
+        description: 'Camel tan 3-seater sofa with leather-like texture, curved armrests, and plush Recron fiber cushioning.'
+      },
+      {
+        id: 'triple-door-wardrobe-dressing',
+        title: 'Triple Door Wardrobe with Dressing',
+        category: 'Bedroom & Wardrobes',
+        isTeak: false,
+        salePrice: 12799,
+        regularPrice: 23400,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_u5r77xu5r77xu5r7_33451fae-e4de-475a-9062-b582ff03b859.png?v=1782736209',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_u5r77xu5r77xu5r7_35fd13ee-9643-4988-96a7-4f65fa5e9afa.png?v=1782738270',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_u5r77xu5r77xu5r7_094701ec-ff10-4611-bc5e-7d64bf8d7f2f.png?v=1782738689'
+        ],
+        description: 'Off-white and dark espresso wardrobe featuring a built-in vertical mirror, vanity counter, and lower cabinet.'
+      },
+      {
+        id: 'dining-4-seater',
+        title: 'Dining Table (4 Seater Marble-Top)',
+        category: 'Dining',
+        isTeak: false,
+        salePrice: 12000,
+        regularPrice: 15000,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/1.2_5e926781-e030-452a-85ba-e90d0353c837.png?v=1782035507',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/1.png?v=1782035507',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/1.1_d43090c7-446e-4ca0-992a-3eefd07149d7.png?v=1782035507',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/1.3_8b02b7a5-62fc-4066-8611-071187b7824f.png?v=1782035507',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_t0h5opt0h5opt0h5.png?v=1782035534'
+        ],
+        description: '5-piece dining set with glossy faux marble top, powder-coated metal frame, and 4 high-back cushioned chairs.'
+      },
+      {
+        id: 'steel-beero-6ft',
+        title: 'Steel Beero (6.5ft Red Glossy)',
+        category: 'Bedroom & Wardrobes',
+        isTeak: false,
+        salePrice: 12000,
+        regularPrice: 24000,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/1_4e6d2868-cc18-4041-a8f8-1805e75b70ad.png?v=1785320776',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/1-Copy.png?v=1785320776',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/1.1_a5e316ac-4b96-4562-99ad-b66797123ba0.png?v=1785320776',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/1.2_3abcc157-3b60-4815-b590-3ca2dd0d0d03.png?v=1785320776'
+        ],
+        description: '6.5ft high-quality steel almirah in rich red glossy finish with full mirror door and secure locking system.'
+      },
+      {
+        id: 'sofa-cushion-3-seater',
+        title: 'Sofa (Cushion Three Seater Sofa)',
+        category: 'Living Room & Sofas',
+        isTeak: false,
+        salePrice: 10500,
+        regularPrice: 14000,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_21kdhn21kdhn21kd.png?v=1781260348',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_9rqxz09rqxz09rqx.png?v=1781260563'
+        ],
+        description: 'Plush cushion three-seater sofa with breathable, fade-resistant upholstery for everyday comfort.'
+      },
+      {
+        id: 'wood-beero-diamond',
+        title: 'Wood Beero (3-Door Diamond Accent)',
+        category: 'Bedroom & Wardrobes',
+        isTeak: false,
+        salePrice: 10300,
+        regularPrice: 15450,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/2.3_580eae8e-3e80-44e1-b698-ea7c2c8ba89e.png?v=1785916008',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/1.1_d121bccb-fd8f-4979-81ba-de03756cffd6.png?v=1785916009',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/2.0.png?v=1785916008',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/2.2_3fa2656a-7498-4fe2-a246-082ba78e65e7.png?v=1785916008'
+        ],
+        description: 'Wood-grain 3-door wardrobe with geometric diamond accents and integrated mirror niche with spotlight.'
+      },
+      {
+        id: 'tv-showcase-1',
+        title: 'TV Showcase (5.5ft Black & Beige Marble)',
+        category: 'TV Units & Worship',
+        isTeak: false,
+        salePrice: 9000,
+        regularPrice: 15000,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/5_8001a469-0aba-4b8e-b99f-9cb54d003063.png?v=1785941758',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/5.1_9e541d20-24db-48aa-a72e-6b2087cd5b01.png?v=1785916961',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/5.2.png?v=1785916961'
+        ],
+        description: 'UV-coated black & beige marble TV unit (5.5ft tall) for 55–65" TVs with open display shelves and 2 cabinets.'
+      },
+      {
+        id: 'pu-foam-3-seater-dual',
+        title: 'PU Foam Comfort 3-Seater – Dual-Tone',
+        category: 'Living Room & Sofas',
+        isTeak: false,
+        salePrice: 9000,
+        regularPrice: 18000,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Frame22.png?v=1767444779',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/image_21.png?v=1767444799',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/image_22.png?v=1767444798',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/image_23.png?v=1767444799'
+        ],
+        description: 'Light beige seating paired with a deep dark-brown frame and high-density PU foam support.'
+      },
+      {
+        id: 'pu-foam-3-seater-brown',
+        title: 'PU Foam Comfort 3-Seater – Classic Brown',
+        category: 'Living Room & Sofas',
+        isTeak: false,
+        salePrice: 9000,
+        regularPrice: 18000,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/image9.png?v=1767444381',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/image_11.png?v=1767444396',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/image_10.png?v=1767444397',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/image_12.png?v=1767444396'
+        ],
+        description: 'Warm brown upholstery with rounded armrests and firm high-density PU foam cushioning.'
+      },
+      {
+        id: 'bedside-wireless',
+        title: 'Bed Side Storage (Gen-Z Wireless Charging)',
+        category: 'Bedroom & Wardrobes',
+        isTeak: false,
+        salePrice: 8999,
+        regularPrice: 16000,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/WhatsApp_Image_2026-06-05_at_4.14.15_PM.jpg?v=1780656349',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/WhatsAppImage2026-06-05at4.14.15PM_1.jpg?v=1780656299',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/WhatsApp_Image_2026-06-05_at_4.14.15_PM_2.jpg?v=1780656348',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/WhatsApp_Image_2026-06-05_at_4.14.16_PM.jpg?v=1780656348',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/WhatsApp_Image_2026-06-05_at_4.14.16_PM_1.jpg?v=1780656348'
+        ],
+        description: 'Smart bedside nightstand with built-in wireless charging pad, ambient LED border, touch controls, and 2 drawers.'
+      },
+      {
+        id: 'tv-table-wood',
+        title: 'TV Stand (6ft Wood Finish)',
+        category: 'TV Units & Worship',
+        isTeak: false,
+        salePrice: 8500,
+        regularPrice: 10000,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/5..png?v=1785325323',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/5.1.png?v=1785325323',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/5.3.png?v=1785325323',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/5.png?v=1785325323'
+        ],
+        description: '6ft x 4ft wood-finish TV unit with back panel, cable outlet, open shelves, and center drawer.'
+      },
+      {
+        id: 'waiting-chair-3-seater',
+        title: 'Waiting Chair (3 Seater Metal Bench)',
+        category: 'Office & Study',
+        isTeak: false,
+        salePrice: 8500,
+        regularPrice: 9000,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_36g2ob36g2ob36g2.png?v=1781873056',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/6.1.png?v=1781872947',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/6.2.png?v=1781872947',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/6.3.png?v=1781872947',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_xovr86xovr86xovr_-_Copy.png?v=1781873056',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_8rhsst8rhsst8rhs_-_Copy_-_Copy.png?v=1781873056'
+        ],
+        description: 'Heavy-duty steel 3-seater tandem waiting bench with perforated seats for clinics, offices, and lobbies.'
+      },
+      {
+        id: 'writing-table-hutch',
+        title: 'Writing Table (Multi-Purpose with Hutch)',
+        category: 'Office & Study',
+        isTeak: false,
+        salePrice: 8499,
+        regularPrice: null,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/0add3cde-bb8f-4a1c-b1ac-1aa822b1d221.jpg?v=1781086486'
+        ],
+        description: 'Compact engineered-wood study desk with 3-compartment side cabinet, top bookshelf hutch, and fold-down workspace.'
+      },
+      {
+        id: 'wood-cupboard',
+        title: 'Wood Cupboard (5ft 2-Door Wardrobe)',
+        category: 'Bedroom & Wardrobes',
+        isTeak: false,
+        salePrice: 7500,
+        regularPrice: 9000,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/4.1_7a25d1c2-befb-4aa8-bf60-0af851d28c9d.png?v=1785324626',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/4.2_4346cea1-29be-409c-aa98-c4b5a724f337.png?v=1785324626',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/4.3_2abb9ef6-6ea3-461a-abcb-56d5d7f191d0.png?v=1785324626',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/4.png?v=1785324626'
+        ],
+        description: '5ft engineered-wood 2-door cupboard with scratch-resistant laminate and central locking system.'
+      },
+      {
+        id: 'steel-beero-5ft',
+        title: 'Steel Beero (5ft Red Glossy)',
+        category: 'Bedroom & Wardrobes',
+        isTeak: false,
+        salePrice: 6500,
+        regularPrice: 10000,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/3.1.png?v=1785322189',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/3.2.png?v=1785322189',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/3.3.png?v=1785322189',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/3.png?v=1785322189',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/2.01.jpg?v=1785334843'
+        ],
+        description: '5ft steel almirah with red glossy finish, mirror door with decorative frame, and secure lock.'
+      },
+      {
+        id: 'exec-chair-ex',
+        title: 'Executive High Back Rolling Chair (Black)',
+        category: 'Office & Study',
+        isTeak: false,
+        salePrice: 6499,
+        regularPrice: 9800,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_nou5zsnou5zsnou5_1becdfdf-8409-4981-88ce-18de37c29461.png?v=1781775119',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_nou5zsnou5zsnou5_0126b745-db86-4b31-b667-3bb97343470a.png?v=1781775951',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_nou5zsnou5zsnou5_8fafe02b-4953-459a-b6a4-780480bce950.png?v=1781776332',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_nou5zsnou5zsnou5_4d990989-ccc4-4386-848e-25a655a43701.png?v=1781777125'
+        ],
+        description: 'Black PU rexin executive boss chair with ergonomic back support, height/tilt adjustment, and metal base.'
+      },
+      {
+        id: 'exec-chair-classic',
+        title: 'Executive High Back Chair (Classic Black)',
+        category: 'Office & Study',
+        isTeak: false,
+        salePrice: 6499,
+        regularPrice: 9800,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_ckjwv1ckjwv1ckjw.png?v=1781767280',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_ckjwv1ckjwv1ckjw_e23a33af-4cca-4cf6-ae7c-1dd1ecc65ac7.png?v=1781767565',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_ckjwv1ckjwv1ckjw_640d7367-8371-4c26-b070-2bd64182742b.png?v=1781767853',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_ckjwv1ckjwv1ckjw_ec4e5ee4-f6e1-4640-82a6-76954aff0059.png?v=1781768070'
+        ],
+        description: 'Padded seat and armrests with smooth-rolling casters and black PU rexin upholstery.'
+      },
+      {
+        id: 'exec-chair-dual',
+        title: 'Executive High Back Chair (Black & Brown)',
+        category: 'Office & Study',
+        isTeak: false,
+        salePrice: 6499,
+        regularPrice: 9800,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_zf1ssmzf1ssmzf1s.png?v=1781608829',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_zf1ssmzf1ssmzf1s_4e470d12-74ca-4622-9210-89baf48c0b18.png?v=1781609021',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_zf1ssmzf1ssmzf1s_470b6c61-2646-4e9e-9c2f-cbd6f5f8bb93.png?v=1781609780',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_zf1ssmzf1ssmzf1s_3150d831-b5e2-43b5-82e4-7a445bc276de.png?v=1781609887'
+        ],
+        description: 'Black and brown PU rexin executive rolling chair with adjustable height and tilt.'
+      },
+      {
+        id: 'exec-chair-boss',
+        title: 'Executive High Back Boss Rolling Chair',
+        category: 'Office & Study',
+        isTeak: false,
+        salePrice: 6499,
+        regularPrice: 9800,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_y80opzy80opzy80o.png?v=1781593025',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_y80opzy80opzy80o_2ab5eb79-8eb5-477c-aa32-0a91084cf992.png?v=1781593085',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_y80opzy80opzy80o_1d105d8f-da44-4333-8bae-d2e8993ac698.png?v=1781591730',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_y80opzy80opzy80o_9d8f4d85-e67e-46b0-ae9c-1a0d5ab054a7.png?v=1781592003',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_y80opzy80opzy80o_b9955228-0f0a-4950-a07b-5bf4438e5668.png?v=1781592121'
+        ],
+        description: 'High-back boss rolling chair with ergonomic lumbar contour and sturdy 5-star caster base.'
+      },
+      {
+        id: 'exec-chair-brown',
+        title: 'Executive High Back Chair (Brown)',
+        category: 'Office & Study',
+        isTeak: false,
+        salePrice: 6499,
+        regularPrice: 9800,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_jmtzpljmtzpljmtz.png?v=1781504367',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_jmtzpljmtzpljmtz_5bc8a0ea-24a3-426e-87ac-bec6b0f8619c.png?v=1781504591',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_jmtzpljmtzpljmtz_94a7988f-72e3-44d1-8d70-0ed45aace6d9.png?v=1781504804',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_jmtzpljmtzpljmtz_c9558c33-ddae-4477-8ed0-2063b21e3915.png?v=1781504926'
+        ],
+        description: 'Rich brown PU rexin executive chair with padded armrests and quick 15-minute assembly.'
+      },
+      {
+        id: 'dressing-table-green',
+        title: 'Dressing Table (White Marble & Green)',
+        category: 'Bedroom & Wardrobes',
+        isTeak: false,
+        salePrice: 5499,
+        regularPrice: 8400,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_cw7o35cw7o35cw7o_f346476b-4e9c-4a74-bd58-9c9e3a595621.png?v=1782822700',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_cw7o35cw7o35cw7o.png?v=1782823033',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_cw7o35cw7o35cw7o_8b3dfb8b-82ff-462d-a028-e48ebbf15751.png?v=1782823148',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_cw7o35cw7o35cw7o_37f75d0d-f20a-4cd3-80d0-df44b9c27500.png?v=1782823221'
+        ],
+        description: 'Modern vanity dressing table with 4 green accent shelves, mirror panel, drawer, and double-door cabinet.'
+      },
+      {
+        id: 'dressing-table-dual',
+        title: 'Dressing Table (Dual-Tone Vanity)',
+        category: 'Bedroom & Wardrobes',
+        isTeak: false,
+        salePrice: 5499,
+        regularPrice: 8400,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_ukp55nukp55nukp5.png?v=1782820165',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_ukp55nukp55nukp5_d6dca70a-5806-44fb-a64f-afa7f432c0ec.png?v=1782820413',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_ukp55nukp55nukp5_831d7fbf-1b58-47a5-8c1d-d45cf65b1e99.png?v=1782820646',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_ukp55nukp55nukp5_9061dcdc-09da-470a-9a2d-5c9392d6b1d5.png?v=1782821055'
+        ],
+        description: 'Contemporary makeup vanity with multi-compartment shelving, mirror, and enclosed lower cabinet.'
+      },
+      {
+        id: 'rolling-chair-headrest',
+        title: 'Rolling Chair with Headrest',
+        category: 'Office & Study',
+        isTeak: false,
+        salePrice: 5499,
+        regularPrice: 8400,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_a2buy1a2buy1a2bu.png?v=1781594373',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_a2buy1a2buy1a2bu_25993fa4-c2f1-4ffb-a1e0-6870ece4524b.png?v=1781594641',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_a2buy1a2buy1a2bu_82c9a8c3-bf35-40be-862d-bc345e921f10.png?v=1781594949',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_a2buy1a2buy1a2bu_f3412928-df9f-415f-8a90-7e06189f8a5c.png?v=1781595137'
+        ],
+        description: 'High-back ergonomic mesh chair with 5cm adjustable lumbar support, 135° tilt, and 90° flip armrests.'
+      },
+      {
+        id: 'office-chair-velvet',
+        title: 'Office Chair (Plush Velvet Swivel)',
+        category: 'Office & Study',
+        isTeak: false,
+        salePrice: 5499,
+        regularPrice: 8300,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_6oiwbd6oiwbd6oiw.png?v=1781593287',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_6oiwbd6oiwbd6oiw_a3b683a3-58a6-41ab-8c0f-1222f0193756.png?v=1781593533',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_6oiwbd6oiwbd6oiw_30462049-5a58-4471-b73b-c036c773dcb8.png?v=1781593673',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_6oiwbd6oiwbd6oiw_871546e3-2e21-4a7e-a09a-e1dfe6c66c17.png?v=1781512925'
+        ],
+        description: 'Velvet task chair with chrome-plated base, 360° swivel wheels, and curved armrests.'
+      },
+      {
+        id: 'rolling-chair-lumbar',
+        title: 'Rolling Chair (Lumbar Support Blue)',
+        category: 'Office & Study',
+        isTeak: false,
+        salePrice: 5000,
+        regularPrice: 7000,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/2.1.png?v=1781528569',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/2.2.png?v=1781528594',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/2.3.png?v=1781528595',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/2.4.png?v=1781528595',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/2.png?v=1781528596',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/2.5.png?v=1781602519'
+        ],
+        description: 'High-back blue leatherette ergonomic office chair designed for posture support during long workdays.'
+      },
+      {
+        id: 'pitbull-storage-teak',
+        title: 'Pitbull Storage & Decor (Teak Wood)',
+        category: 'Handicraft & Decor',
+        isTeak: true,
+        salePrice: 4999,
+        regularPrice: 8000,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/WhatsAppImage2026-06-05at3.43.25PM_1.jpg?v=1780660159',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/WhatsAppImage2026-06-05at3.43.25PM.jpg?v=1780660241'
+        ],
+        description: 'Handcrafted teak wood centerpiece and storage sculpture for dining tables or living room consoles.'
+      },
+      {
+        id: 'elephant-storage',
+        title: 'Elephant Storage & Decoration',
+        category: 'Handicraft & Decor',
+        isTeak: true,
+        salePrice: 4999,
+        regularPrice: 8000,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/ELEPHANT_STORAGE.jpg?v=1780655055',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/ELEPHANT.jpg?v=1780655245',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/WhatsAppImage2026-06-05at3.43.22PM.jpg?v=1780655757'
+        ],
+        description: 'Artisanal elephant storage bowl and decorative centerpiece for fruits, ornaments, or tabletop styling.'
+      },
+      {
+        id: 'rolling-chair-3',
+        title: 'Rolling Chair (Stitched High-Back)',
+        category: 'Office & Study',
+        isTeak: false,
+        salePrice: 4999,
+        regularPrice: 7300,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_ort0aport0aport0.png?v=1781613478',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_ort0aport0aport0_81426220-703b-4886-a016-a6a2990b14c0.png?v=1781613629',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_ort0aport0aport0_cfa1a845-2e5b-4be0-832f-4734cdd259c8.png?v=1781614331',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_ort0aport0aport0_30670f21-47cc-44f7-8c07-fef069d137fa.png?v=1781615381'
+        ],
+        description: 'High-back stitched rolling chair with sturdy black frame, curved armrests, and 5-point casters.'
+      },
+      {
+        id: 'rolling-chair-yellow',
+        title: 'Rolling Chair (Light Yellow Mesh)',
+        category: 'Office & Study',
+        isTeak: false,
+        salePrice: 4700,
+        regularPrice: 7300,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_hl3thlhl3thlhl3t.png?v=1781875304',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_hl3thlhl3thlhl3t_240710f1-333e-44d8-a7b4-85abe7b0e9f5.png?v=1781875749',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_hl3thlhl3thlhl3t_e933e1b3-4ed9-42d1-8add-a1df43f0e3ad.png?v=1781875925',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_hl3thlhl3thlhl3t_762ae123-6d3d-40c2-a724-a8941c924bc4.png?v=1781876061'
+        ],
+        description: 'Adjustable-height light yellow mesh office chair with 360° swivel and flip-up armrests.'
+      },
+      {
+        id: 'rolling-chair-white',
+        title: 'Rolling Chair (Contemporary White)',
+        category: 'Office & Study',
+        isTeak: false,
+        salePrice: 4499,
+        regularPrice: 6800,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_b998ldb998ldb998.png?v=1782202324',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_b998ldb998ldb998_938fe330-af39-43b3-9120-a015bc494338.png?v=1782202811',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_b998ldb998ldb998_9931d383-7c80-4d01-934b-59e1a07a5efd.png?v=1782203493',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_b998ldb998ldb998_de221bd5-3990-41b2-908c-4b5f201db95d.png?v=1782203745'
+        ],
+        description: 'Clean white desk chair with curved black armrests, height lever, and 5-point rolling base.'
+      },
+      {
+        id: 'rolling-chair-mesh',
+        title: 'Rolling Chair (Breathable Mesh)',
+        category: 'Office & Study',
+        isTeak: false,
+        salePrice: 4499,
+        regularPrice: 6800,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_n8mx5dn8mx5dn8mx.png?v=1781596472',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_n8mx5dn8mx5dn8mx_268ce873-3ddd-4e45-85d7-3384a78e4998.png?v=1781596816',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_n8mx5dn8mx5dn8mx_6745bcc6-bec0-49af-94e1-9311b317df8f.png?v=1781597022',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_n8mx5dn8mx5dn8mx_440d71f6-9a2a-467c-9d1b-dbdde75d11c9.png?v=1781597200'
+        ],
+        description: 'Minimalist tall breathable mesh backrest chair with adjustable height and curved armrests.'
+      },
+      {
+        id: 'office-chair-recliner',
+        title: 'Office Chair (135° Recline Mesh)',
+        category: 'Office & Study',
+        isTeak: false,
+        salePrice: 4499,
+        regularPrice: 7100,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_8d5oan8d5oan8d5o_3e79c43d-8dec-4349-a7c6-1a722f700d58.png?v=1781525662',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_8d5oan8d5oan8d5o_44f82f5d-0112-4c9c-9fd6-964ead0d80f7.png?v=1781525816',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_8d5oan8d5oan8d5o_3abca3cf-9f2e-4fbf-92b6-47d76b62609f.png?v=1781525944',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_8d5oan8d5oan8d5o_7d7932dd-e993-48e7-9f26-3fd6dbed1cdd.png?v=1781526082',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_8d5oan8d5oan8d5o_3aec7f9c-8107-41ca-b1b4-14220f4de4ba.png?v=1781526497'
+        ],
+        description: 'Made-in-India high-density foam & breathable mesh office chair with 135° recline.'
+      },
+      {
+        id: 'tv-showcase-modern',
+        title: 'TV Showcase (Black Marble Finish)',
+        category: 'TV Units & Worship',
+        isTeak: false,
+        salePrice: 4500,
+        regularPrice: 7000,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/4.1_c880031c-9a20-48cb-9e74-c8a27601e03e.png?v=1785916670',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/4.2_46a855f1-f1ee-4862-aa9f-b6083e2c9e46.png?v=1785916670',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/4_781ed24e-c304-46e3-865a-fd18801d5dd9.png?v=1785916670'
+        ],
+        description: '40 kg particle board TV unit in black marble finish with multiple open shelves for media and decor.'
+      },
+      {
+        id: 'pooja-cupboard-wood',
+        title: 'Pooja Cupboard (Dark Wood Bell-Cutout)',
+        category: 'TV Units & Worship',
+        isTeak: false,
+        salePrice: 3500,
+        regularPrice: 5000,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/4.3.png?v=1782125016',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/4.2.png?v=1782125016',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/4.1.png?v=1782125016',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/4.4.png?v=1782125016'
+        ],
+        description: 'Rich dark wood pooja cupboard with dual bell-cutout doors, scalloped arch crown, and base storage drawer.'
+      },
+      {
+        id: 'dining-plastic',
+        title: 'Dining Table (Round Molded Plastic)',
+        category: 'Dining',
+        isTeak: false,
+        salePrice: 3499,
+        regularPrice: 4800,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_p4qti7p4qti7p4qt.png?v=1781520143',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/1.1.png?v=1781520143',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/1.2.png?v=1781520142',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/1.3.png?v=1781520142',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/1.4.png?v=1781520142'
+        ],
+        description: 'Chocolate brown round molded plastic dining table with geometric grid-tile top and flared pedestal base.'
+      },
+      {
+        id: 'dressing-table-vertical',
+        title: 'Dressing Table (Vertical Black & White Marble)',
+        category: 'Bedroom & Wardrobes',
+        isTeak: false,
+        salePrice: 3300,
+        regularPrice: 3800,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/7.1.png?v=1781875380',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/7.2.png?v=1781875380',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/7.3.png?v=1781875380',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/7.4.png?v=1781875380',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/7.png?v=1781875380'
+        ],
+        description: 'Space-saving vertical dressing table with full-length mirror, central drawer, and matching pull-out stool.'
+      },
+      {
+        id: 'bookshelf-wood',
+        title: 'Book Shelf (Particle Board Wood)',
+        category: 'Office & Study',
+        isTeak: false,
+        salePrice: 2500,
+        regularPrice: 4200,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_qqfg05qqfg05qqfg.png?v=1781445304',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_odq056odq056odq0.png?v=1781440068',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_odq056odq056odq0_a619ff53-56be-46c0-86ff-551dfe8106de.png?v=1781440172',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_odq056odq056odq0_e05d6fe1-5801-4e49-a411-f35f9dcb520e.png?v=1781440263'
+        ],
+        description: 'Pre-assembled free-standing open bookshelf ideal for home, office, or study storage.'
+      },
+      {
+        id: 'teapoy-metallic',
+        title: 'Teapoy (Metallic Pedestal Side Table)',
+        category: 'Living Room & Sofas',
+        isTeak: false,
+        salePrice: 1900,
+        regularPrice: 6500,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/teapoy.jpg?v=1780649096',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/teapoy_6e75e8d8-bba9-4960-8bb0-af9249d41541.jpg?v=1780649188',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/teapoy_2.jpg?v=1780649309',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/BLACK.avif?v=1781005501',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/GOLD.jpg?v=1781005691'
+        ],
+        description: 'Compact metal round pedestal side table (Black, Gold, White/Clear options) for sofas and corners.'
+      },
+      {
+        id: 'pooja-cupboard-cabin',
+        title: 'Pooja Cupboard (Minimalist Cabin)',
+        category: 'TV Units & Worship',
+        isTeak: false,
+        salePrice: 1800,
+        regularPrice: 2600,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/5.2-Copy_2.png?v=1781615378',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/5.1-Copy_2.png?v=1781615378',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/5.4-Copy_3.png?v=1781615378',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/5.3-Copy_2.png?v=1781615378',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/5-Copy_4.png?v=1781615378'
+        ],
+        description: 'Cabin-style wooden pooja cupboard with enclosed cabinet for privacy and clean minimalist styling.'
+      },
+      {
+        id: 'writing-table-foldable',
+        title: 'Writing Table (Foldable Round Top)',
+        category: 'Office & Study',
+        isTeak: false,
+        salePrice: 1500,
+        regularPrice: 2300,
+        images: [
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_t5c6lwt5c6lwt5c6_1.png?v=1781268883',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_9rhxip9rhxip9rhx.png?v=1781267476',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_xt71epxt71epxt71.png?v=1781267475',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_28stoj28stoj28st_1.png?v=1781267475',
+          'https://cdn.shopify.com/s/files/1/0696/1178/2331/files/Gemini_Generated_Image_1fzlp21fzlp21fzl.png?v=1781267476'
+        ],
+        description: 'Space-saving foldable round-top study and laptop table with wood-grain surface and protective edging.'
+      }
+    ];
+
+    const state = {
+      category: 'All',
+      teakOnly: false,
+      wishlistOnly: false,
+      search: '',
+      sort: 'featured',
+      wishlist: new Set(),
+      cart: {},
+      quickViewId: null,
+      qvImgIdx: 0,
+    };
+
+    try {
+      const savedCart = localStorage.getItem('barani_cart_v3');
+      if (savedCart) state.cart = JSON.parse(savedCart);
+      const savedWish = localStorage.getItem('barani_wish_v3');
+      if (savedWish) state.wishlist = new Set(JSON.parse(savedWish));
+    } catch (_) {}
+
+    function persistState() {
+      try {
+        localStorage.setItem('barani_cart_v3', JSON.stringify(state.cart));
+        localStorage.setItem('barani_wish_v3', JSON.stringify(Array.from(state.wishlist)));
+      } catch (_) {}
+    }
+
+    function formatINR(num) {
+      return 'Rs. ' + Number(num).toLocaleString('en-IN');
+    }
+
+    function discountPercent(p) {
+      if (!p.salePrice || !p.regularPrice || p.regularPrice <= p.salePrice) return 0;
+      return Math.round(((p.regularPrice - p.salePrice) / p.regularPrice) * 100);
+    }
+
+    let toastTimer = null;
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toastMessage').textContent = msg;
+      toast.classList.remove('hidden');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.add('hidden'), 3200);
+    }
+
+    function getFilteredProducts() {
+      let list = PRODUCTS.filter((p) => {
+        if (state.category !== 'All' && p.category !== state.category) return false;
+        if (state.teakOnly && !p.isTeak) return false;
+        if (state.wishlistOnly && !state.wishlist.has(p.id)) return false;
+        if (state.search.trim()) {
+          const q = state.search.trim().toLowerCase();
+          const hay = (p.title + ' ' + p.category + ' ' + p.description).toLowerCase();
+          if (!hay.includes(q)) return false;
+        }
+        return true;
+      });
+
+      if (state.sort === 'price-asc') {
+        list = [...list].sort((a, b) => a.salePrice - b.salePrice);
+      } else if (state.sort === 'price-desc') {
+        list = [...list].sort((a, b) => b.salePrice - a.salePrice);
+      } else if (state.sort === 'savings') {
+        list = [...list].sort((a, b) => discountPercent(b) - discountPercent(a));
+      }
+      return list;
+    }
+
+    function renderCatalog() {
+      const grid = document.getElementById('productGrid');
+      const empty = document.getElementById('emptyState');
+      const statusBox = document.getElementById('activeFilterStatus');
+      const statusText = document.getElementById('activeFilterText');
+
+      document.querySelectorAll('.cat-tab').forEach((btn) => {
+        const active = btn.dataset.category === state.category && !state.teakOnly && !state.wishlistOnly;
+        btn.className = active
+          ? 'cat-tab px-3.5 py-2 rounded-full text-xs sm:text-sm font-medium transition-colors bg-espresso text-ivory'
+          : 'cat-tab px-3.5 py-2 rounded-full text-xs sm:text-sm font-medium transition-colors bg-ivory text-walnut border border-linen hover:border-teak';
+      });
+
+      const items = getFilteredProducts();
+      const filtersActive = state.category !== 'All' || state.teakOnly || state.wishlistOnly || state.search.trim() !== '';
+      if (filtersActive) {
+        const parts = [];
+        if (state.category !== 'All') parts.push(state.category);
+        if (state.teakOnly) parts.push('Signature Teak');
+        if (state.wishlistOnly) parts.push('Saved Items');
+        if (state.search.trim()) parts.push(`"${state.search.trim()}"`);
+        statusText.textContent = `Showing ${items.length} items (${parts.join(' • ')})`;
+        statusBox.classList.remove('hidden');
+      } else {
+        statusBox.classList.add('hidden');
+      }
+
+      if (items.length === 0) {
+        grid.innerHTML = '';
+        empty.classList.remove('hidden');
+        return;
+      }
+
+      empty.classList.add('hidden');
+      grid.innerHTML = items.map((p) => {
+        const pct = discountPercent(p);
+        const wished = state.wishlist.has(p.id);
+        const photoCount = p.images.length;
+        return `
+          <article class="bg-ivory rounded-2xl border border-linen overflow-hidden flex flex-col card-hover">
+            <div class="relative aspect-[4/3] bg-sand overflow-hidden">
+              <img src="${p.images[0]}" alt="${p.title}" loading="lazy" class="w-full h-full object-cover" />
+              ${pct > 0 ? `<span class="absolute top-3 left-3 bg-espresso/90 text-brass text-[11px] font-semibold px-2.5 py-1 rounded-full">Save ${pct}%</span>` : ''}
+              ${photoCount > 1 ? `<span class="absolute bottom-2.5 left-3 bg-espresso/75 text-ivory text-[10px] font-medium px-2 py-0.5 rounded-full">${photoCount} Photos</span>` : ''}
+              <button type="button" data-action="wish" data-id="${p.id}" aria-label="Toggle wishlist" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-ivory/90 hover:bg-ivory flex items-center justify-center shadow-sm transition-colors ${wished ? 'text-teak' : 'text-walnut'}">
+                <svg class="w-4 h-4" fill="${wished ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+              </button>
+            </div>
+            <div class="p-4 sm:p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <p class="text-[11px] uppercase tracking-wider text-teak font-semibold">${p.category}</p>
+                <h3 class="font-serif text-lg font-semibold text-espresso mt-1 leading-snug">${p.title}</h3>
+              </div>
+              <div class="mt-4 pt-3 border-t border-linen/80">
+                <div class="flex items-baseline gap-2">
+                  <span class="text-base sm:text-lg font-bold text-espresso">${formatINR(p.salePrice)}</span>
+                  ${p.regularPrice ? `<span class="text-xs text-walnut/60 line-through">${formatINR(p.regularPrice)}</span>` : ''}
+                </div>
+                <div class="mt-3 grid grid-cols-2 gap-2">
+                  <button type="button" data-action="quick" data-id="${p.id}" class="border border-linen hover:border-teak text-espresso text-xs font-medium py-2 rounded-full transition-colors">
+                    Quick View
+                  </button>
+                  <button type="button" data-action="add" data-id="${p.id}" class="bg-espresso hover:bg-teak text-ivory text-xs font-semibold py-2 rounded-full transition-colors">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    function renderBadgesAndCart() {
+      const wishBadge = document.getElementById('wishlistBadge');
+      const wishCount = state.wishlist.size;
+      wishBadge.textContent = wishCount;
+      wishBadge.classList.toggle('hidden', wishCount === 0);
+
+      let totalQty = 0;
+      let subtotal = 0;
+      let totalSavings = 0;
+      const entries = Object.entries(state.cart).filter(([, qty]) => qty > 0);
+
+      entries.forEach(([id, qty]) => {
+        const p = PRODUCTS.find((item) => item.id === id);
+        if (!p) return;
+        totalQty += qty;
+        subtotal += p.salePrice * qty;
+        if (p.regularPrice && p.regularPrice > p.salePrice) {
+          totalSavings += (p.regularPrice - p.salePrice) * qty;
+        }
+      });
+
+      document.getElementById('cartCountBadge').textContent = totalQty;
+      document.getElementById('cartDrawerSubtitle').textContent = `${totalQty} ${totalQty === 1 ? 'item' : 'items'} selected`;
+      document.getElementById('cartSubtotal').textContent = formatINR(subtotal);
+      document.getElementById('cartSavingsTotal').textContent = formatINR(totalSavings);
+
+      const listEl = document.getElementById('cartItemsList');
+      const footerEl = document.getElementById('cartFooter');
+
+      if (entries.length === 0) {
+        footerEl.classList.add('hidden');
+        listEl.innerHTML = `
+          <div class="text-center py-14">
+            <p class="font-serif text-lg text-espresso">Your cart is empty</p>
+            <p class="text-xs text-walnut mt-1">Explore our teak sofas, wardrobes, dining sets, and office chairs to add items.</p>
+          </div>
+        `;
+        return;
+      }
+
+      footerEl.classList.remove('hidden');
+      listEl.innerHTML = entries.map(([id, qty]) => {
+        const p = PRODUCTS.find((item) => item.id === id);
+        if (!p) return '';
+        return `
+          <div class="flex gap-3.5 bg-sand/50 border border-linen rounded-xl p-3">
+            <img src="${p.images[0]}" alt="${p.title}" class="w-20 h-20 rounded-lg object-cover shrink-0" />
+            <div class="flex-1 min-w-0">
+              <h4 class="font-serif text-sm font-semibold text-espresso truncate">${p.title}</h4>
+              <p class="text-xs text-teak font-semibold mt-0.5">${formatINR(p.salePrice)}</p>
+              <div class="mt-2.5 flex items-center justify-between">
+                <div class="inline-flex items-center border border-linen rounded-full bg-ivory">
+                  <button type="button" data-cart-op="dec" data-id="${p.id}" class="px-2.5 py-0.5 text-sm text-espresso hover:text-teak">-</button>
+                  <span class="px-2 text-xs font-semibold">${qty}</span>
+                  <button type="button" data-cart-op="inc" data-id="${p.id}" class="px-2.5 py-0.5 text-sm text-espresso hover:text-teak">+</button>
+                </div>
+                <button type="button" data-cart-op="remove" data-id="${p.id}" class="text-[11px] text-walnut hover:text-espresso underline">Remove</button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function addToCart(id) {
+      const p = PRODUCTS.find((x) => x.id === id);
+      if (!p) return;
+      state.cart[id] = (state.cart[id] || 0) + 1;
+      persistState();
+      renderBadgesAndCart();
+      showToast(`Added "${p.title}" to cart`);
+    }
+
+    function renderQuickViewImage() {
+      const p = PRODUCTS.find((x) => x.id === state.quickViewId);
+      if (!p) return;
+      const imgs = p.images;
+      const mainImg = document.getElementById('qvImage');
+      mainImg.src = imgs[state.qvImgIdx] || imgs[0];
+      mainImg.alt = p.title;
+
+      const hasMulti = imgs.length > 1;
+      document.getElementById('qvPrevImgBtn').classList.toggle('hidden', !hasMulti);
+      document.getElementById('qvNextImgBtn').classList.toggle('hidden', !hasMulti);
+
+      const thumbsEl = document.getElementById('qvThumbs');
+      thumbsEl.innerHTML = hasMulti
+        ? imgs.map((src, idx) => `
+            <button type="button" data-thumb-idx="${idx}" class="w-14 h-14 rounded-lg overflow-hidden shrink-0 border-2 ${idx === state.qvImgIdx ? 'border-teak' : 'border-transparent opacity-70 hover:opacity-100'}">
+              <img src="${src}" alt="Thumbnail ${idx + 1}" class="w-full h-full object-cover" />
+            </button>
+          `).join('')
+        : '';
+    }
+
+    function openQuickView(id) {
+      const p = PRODUCTS.find((x) => x.id === id);
+      if (!p) return;
+      state.quickViewId = id;
+      state.qvImgIdx = 0;
+      document.getElementById('qvCategory').textContent = p.category;
+      document.getElementById('qvTitle').textContent = p.title;
+      document.getElementById('qvSalePrice').textContent = formatINR(p.salePrice);
+      document.getElementById('qvRegularPrice').textContent = p.regularPrice ? formatINR(p.regularPrice) : '';
+      const pct = discountPercent(p);
+      const badge = document.getElementById('qvSavingsBadge');
+      badge.textContent = pct > 0 ? `Save ${pct}%` : '';
+      badge.classList.toggle('hidden', pct === 0);
+      document.getElementById('qvDescription').textContent = p.description;
+      renderQuickViewImage();
+      document.getElementById('quickViewModal').classList.remove('hidden');
+    }
+
+    function resetFilters() {
+      state.category = 'All';
+      state.teakOnly = false;
+      state.wishlistOnly = false;
+      state.search = '';
+      document.getElementById('searchInput').value = '';
+      renderCatalog();
+    }
+
+    // Hero Video Toggle
+    document.getElementById('toggleHeroVideoBtn').addEventListener('click', (e) => {
+      const vid = document.getElementById('heroVideo');
+      if (vid.paused) {
+        vid.play();
+        e.target.textContent = 'Pause Video';
+      } else {
+        vid.pause();
+        e.target.textContent = 'Play Video';
+      }
+    });
+
+    // Catalog Events
+    document.getElementById('productGrid').addEventListener('click', (e) => {
+      const btn = e.target.closest('button[data-action]');
+      if (!btn) return;
+      const { action, id } = btn.dataset;
+      if (action === 'add') addToCart(id);
+      if (action === 'quick') openQuickView(id);
+      if (action === 'wish') {
+        if (state.wishlist.has(id)) {
+          state.wishlist.delete(id);
+          showToast('Removed from saved items');
+        } else {
+          state.wishlist.add(id);
+          showToast('Saved to your wishlist');
+        }
+        persistState();
+        renderCatalog();
+        renderBadgesAndCart();
+      }
+    });
+
+    document.getElementById('categoryTabs').addEventListener('click', (e) => {
+      const btn = e.target.closest('.cat-tab');
+      if (!btn) return;
+      state.category = btn.dataset.category;
+      state.teakOnly = false;
+      state.wishlistOnly = false;
+      renderCatalog();
+    });
+
+    document.querySelectorAll('.room-card').forEach((card) => {
+      card.addEventListener('click', () => {
+        state.category = card.dataset.roomFilter;
+        state.teakOnly = false;
+        state.wishlistOnly = false;
+        renderCatalog();
+        document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    document.getElementById('heroTeakFilterBtn').addEventListener('click', () => {
+      state.category = 'All';
+      state.teakOnly = true;
+      state.wishlistOnly = false;
+      renderCatalog();
+      document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    document.getElementById('wishlistFilterBtn').addEventListener('click', () => {
+      state.wishlistOnly = !state.wishlistOnly;
+      state.teakOnly = false;
+      renderCatalog();
+      document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    document.getElementById('sortSelect').addEventListener('change', (e) => {
+      state.sort = e.target.value;
+      renderCatalog();
+    });
+
+    document.getElementById('toggleSearchBtn').addEventListener('click', () => {
+      const panel = document.getElementById('searchBarPanel');
+      panel.classList.toggle('hidden');
+      if (!panel.classList.contains('hidden')) {
+        document.getElementById('searchInput').focus();
+      }
+    });
+
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+      state.search = e.target.value;
+      renderCatalog();
+    });
+
+    document.getElementById('clearSearchBtn').addEventListener('click', () => {
+      state.search = '';
+      document.getElementById('searchInput').value = '';
+      renderCatalog();
+    });
+
+    document.getElementById('resetAllFiltersBtn').addEventListener('click', resetFilters);
+    document.getElementById('emptyResetBtn').addEventListener('click', resetFilters);
+
+    document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+      document.getElementById('mobileMenuPanel').classList.toggle('hidden');
+    });
+    document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+      link.addEventListener('click', () => {
+        document.getElementById('mobileMenuPanel').classList.add('hidden');
+      });
+    });
+
+    // Quick View Gallery & Controls
+    document.getElementById('qvPrevImgBtn').addEventListener('click', () => {
+      const p = PRODUCTS.find((x) => x.id === state.quickViewId);
+      if (!p) return;
+      state.qvImgIdx = (state.qvImgIdx - 1 + p.images.length) % p.images.length;
+      renderQuickViewImage();
+    });
+    document.getElementById('qvNextImgBtn').addEventListener('click', () => {
+      const p = PRODUCTS.find((x) => x.id === state.quickViewId);
+      if (!p) return;
+      state.qvImgIdx = (state.qvImgIdx + 1) % p.images.length;
+      renderQuickViewImage();
+    });
+    document.getElementById('qvThumbs').addEventListener('click', (e) => {
+      const btn = e.target.closest('button[data-thumb-idx]');
+      if (!btn) return;
+      state.qvImgIdx = Number(btn.dataset.thumbIdx);
+      renderQuickViewImage();
+    });
+    document.getElementById('closeQuickViewBtn').addEventListener('click', () => {
+      document.getElementById('quickViewModal').classList.add('hidden');
+    });
+    document.getElementById('quickViewModal').addEventListener('click', (e) => {
+      if (e.target.id === 'quickViewModal') {
+        document.getElementById('quickViewModal').classList.add('hidden');
+      }
+    });
+    document.getElementById('qvAddToCartBtn').addEventListener('click', () => {
+      if (state.quickViewId) {
+        addToCart(state.quickViewId);
+        document.getElementById('quickViewModal').classList.add('hidden');
+      }
+    });
+    document.getElementById('qvEnquireBtn').addEventListener('click', () => {
+      const p = PRODUCTS.find((x) => x.id === state.quickViewId);
+      document.getElementById('quickViewModal').classList.add('hidden');
+      if (p) {
+        document.getElementById('contactComment').value = `Hi, I would like more details about "${p.title}" (${formatINR(p.salePrice)}).`;
+      }
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Cart Drawer Controls
+    document.getElementById('openCartBtn').addEventListener('click', () => {
+      document.getElementById('cartDrawerOverlay').classList.remove('hidden');
+    });
+    document.getElementById('closeCartBtn').addEventListener('click', () => {
+      document.getElementById('cartDrawerOverlay').classList.add('hidden');
+    });
+    document.getElementById('cartDrawerOverlay').addEventListener('click', (e) => {
+      if (e.target.id === 'cartDrawerOverlay') {
+        document.getElementById('cartDrawerOverlay').classList.add('hidden');
+      }
+    });
+    document.getElementById('cartItemsList').addEventListener('click', (e) => {
+      const btn = e.target.closest('button[data-cart-op]');
+      if (!btn) return;
+      const { cartOp, id } = btn.dataset;
+      if (cartOp === 'inc') state.cart[id] = (state.cart[id] || 0) + 1;
+      if (cartOp === 'dec') {
+        state.cart[id] = Math.max(0, (state.cart[id] || 0) - 1);
+        if (state.cart[id] === 0) delete state.cart[id];
+      }
+      if (cartOp === 'remove') delete state.cart[id];
+      persistState();
+      renderBadgesAndCart();
+    });
+
+    // FAQ Accordion
+    document.querySelectorAll('[data-faq-toggle]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const body = btn.nextElementSibling;
+        const icon = btn.querySelector('.faq-icon');
+        const isHidden = body.classList.contains('hidden');
+        body.classList.toggle('hidden', !isHidden);
+        icon.textContent = isHidden ? '−' : '+';
+      });
+    });
+
+    // Policy Modal
+    const POLICIES = {
+      privacy: {
+        title: 'Privacy Policy',
+        body: 'Barani Furniture collects your contact, transaction, and communication details solely to fulfill orders, respond to inquiries, and tailor your shopping experience.'
+      },
+      terms: {
+        title: 'Terms of Service',
+        body: 'All prices are listed in Indian Rupees (Rs.) and are subject to availability. Hand-carved natural teak wood products may vary slightly in grain and tone.'
+      },
+      shipping: {
+        title: 'Shipping Policy',
+        body: 'Orders are carefully packed and dispatched via trusted furniture carriers. Our team confirms delivery windows and assembly details prior to dispatch.'
+      },
+      refund: {
+        title: 'Refund Policy',
+        body: 'Returns are not accepted for customized or made-to-order furniture. For standard items arriving damaged or defective, report within 24 hours of delivery; approved refunds process within 5–7 working days.'
+      }
+    };
+
+    document.querySelectorAll('[data-policy]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const item = POLICIES[btn.dataset.policy];
+        if (!item) return;
+        document.getElementById('policyTitle').textContent = item.title;
+        document.getElementById('policyBody').textContent = item.body;
+        document.getElementById('policyModal').classList.remove('hidden');
+      });
+    });
+    ['closePolicyBtn', 'ackPolicyBtn'].forEach((id) => {
+      document.getElementById(id).addEventListener('click', () => {
+        document.getElementById('policyModal').classList.add('hidden');
+      });
+    });
+    document.getElementById('policyModal').addEventListener('click', (e) => {
+      if (e.target.id === 'policyModal') document.getElementById('policyModal').classList.add('hidden');
+    });
+
+    document.getElementById('closeOrderConfirmBtn').addEventListener('click', () => {
+      document.getElementById('orderConfirmModal').classList.add('hidden');
+    });
+
+    // Forms
+    document.getElementById('checkoutOrderForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('orderCustomerName').value.trim();
+      const phone = document.getElementById('orderCustomerPhone').value.trim();
+      let count = 0;
+      let total = 0;
+      Object.entries(state.cart).forEach(([id, qty]) => {
+        const p = PRODUCTS.find((item) => item.id === id);
+        if (p && p.salePrice && qty > 0) {
+          count += qty;
+          total += p.salePrice * qty;
+        }
+      });
+      state.cart = {};
+      persistState();
+      renderBadgesAndCart();
+      e.target.reset();
+      document.getElementById('cartDrawerOverlay').classList.add('hidden');
+      document.getElementById('orderConfirmSummary').textContent = `Thank you, ${name}. We've logged your request for ${count} ${count === 1 ? 'item' : 'items'} (${formatINR(total)}) and will reach out on ${phone} shortly.`;
+      document.getElementById('orderConfirmModal').classList.remove('hidden');
+    });
+
+    document.getElementById('contactForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('contactName').value.trim();
+      e.target.reset();
+      showToast(`Thanks ${name}! Our team will reply to your inquiry shortly.`);
+    });
+
+    document.getElementById('newsletterForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      e.target.reset();
+      showToast('Subscribed! Watch your inbox for seasonal teak offers.');
+    });
+
+    // Initial Render
+    renderCatalog();
+    renderBadgesAndCart();
+  </script>
+</body>
+</html>
